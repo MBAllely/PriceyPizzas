@@ -42,3 +42,20 @@ Pizza.prototype.pricer = function(){
 
   return price;
 };
+
+
+$(function() {
+  $("form.pizza-form").submit(function(event) {
+    event.preventDefault();
+
+    var inputtedSize = $("select#pizza-size").val();
+    var inputtedToppings = $("input:checked").val();
+    var inputtedDelivery = $("select#delivery-option").val();
+
+    var newPizza = new Pizza(inputtedSize, inputtedToppings, inputtedDelivery);
+
+    $(".result").text(newPizza.fullDetails() + " with " + inputtedToppings +  " will be $" + newPizza.pricer() + ".00");
+  });
+
+
+})

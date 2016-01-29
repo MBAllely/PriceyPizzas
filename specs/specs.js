@@ -15,7 +15,7 @@ describe("Pizza", function() {
     expect(newOrder.fullDetails()).to.equal("medium with pepperoni for delivery");
   });
   it("determines the final price of a new pizza order", function() {
-    var newOrder = new Pizza("medium", ["pepperoni"], "delivery");
-    expect(newOrder.pricer()).to.equal(17);
+    var newOrder = new Pizza("medium", ["pepperoni", "onion", "mushrooms"], "delivery");
+    expect(newOrder.pricer()).to.equal(21);
   });
 });

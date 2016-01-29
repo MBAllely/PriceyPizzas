@@ -5,16 +5,49 @@
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-    <title>Mountain High Pizza Pie</title>
+    <title>Pricey's Pizzas</title>
   </head>
   <body>
-    <form class="pizza-form">
-      <input type="checkbox" name="onions" value="onions"> Onions<br>
-      <input type="checkbox" name="pepperoni" value="pepperoni"> Pepperoni<br>
-      <input type="checkbox" name="peppers" value="peppers"> Green Peppers<br>
-      <input type="checkbox" name="mushrooms" value="mushrooms"> Mushrooms<br>
-      <input type="checkbox" name="anchovies" value="anchovies"> Anchovies<br>
-      <input type="submit" value="Submit">
-    </form>
+    <div class="jumbotron">
+      <h1>Booshie's Gentrified Pizza Pies</h1>
+    </div>
+<div class="container">
+  <h4>Welcome to Booshie's expensive pizzas!  We're known worldwide for our diamond-encrusted pizzas and luxurious bathrooms; beautiful tile mosaics for your viewing pleasure!  There's also a swimming pool in the dining room.</h4>
+  <div class="row"> <!--row-->
+    <div class="col-xs-8"> <!--column 1-->
+      <form class="pizza-form">
+        <div class="form-group"><!--size-->
+          <label for="pizza-size">Size</label>
+          <select id="pizza-size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div><!--size end-->
+        <div class="form-group"> <!--checkbox-->
+          <input type="checkbox" name="topping" value="onions" id="onions"> Onions<br>
+          <input type="checkbox" name="topping" value="pepperoni" id="pepperoni"> Pepperoni<br>
+          <input type="checkbox" name="topping" value="peppers" id=" peppers"> Green Peppers<br>
+          <input type="checkbox" name="topping" value="mushrooms" id="mushrooms"> Mushrooms<br>
+          <input type="checkbox" name="topping" value="anchovies" id="anchovies"> Anchovies<br>
+
+        </div> <!--checkbox end-->
+        <div class="form-group">
+          <label for="delivery-option">Carry out or Delivery?</label>
+          <select id="delivery-option">
+            <option value="carry-out">Carry out</option>
+            <option value="delivery">Delivery</option>
+          </select>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div> <!--column 1 end-->
+    <div class="col-xs-4 result"> <!--column 2-->
+
+    </div> <!--column 2 end-->
+  </div> <!--row end-->
+</div>
+
+
   </body>
 </html>
