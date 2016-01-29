@@ -1,3 +1,13 @@
 .jumbotron {
   text-align: center;
+  background-image: url(http://dl.glitter-graphics.com/pub/2428/2428040mr3hlm8axb.jpg);
+  color: #990098;
+}
+
+.jumbotext {
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: cursive;
+  font-weight: bolder;
 }

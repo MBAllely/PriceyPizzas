@@ -8,8 +8,8 @@ function Pizza (pizzaSize, toppingsList, delivery) {
 
 Pizza.prototype.toppingAdder = function(topping) {
   var toppings = ["pepperoni", "olives", "anchovies", "mushrooms", "green peppers", "onions"];
-  var toppingsList = [];
-  for (var i = 0; i < toppings.length; i++) {
+  var toppingsList = ["nil"];
+  for (var i = 1; i < toppings.length; i++) {
     if (toppings[i] = topping) {
       this.toppingsList.push(toppings[i]);
     }
@@ -17,44 +17,50 @@ Pizza.prototype.toppingAdder = function(topping) {
   return this.toppingsList;
 };
 
-Pizza.prototype.fullDetails = function() {
-  return this.pizzaSize + ' with ' + this.toppingsList + " for " + this.delivery;
+Pizza.prototype.fullDetails = function() { //returns full details
+  return "Your order: a " + this.pizzaSize + " pizza with ";
 };
 
 Pizza.prototype.pricer = function(){
-  var price = 10 //base price = 10
-
+  var price = 500 //base price = 500
     if (this.pizzaSize === "large") {
-    price += 4;
+    price += 50;
   } else if (this.pizzaSize === "medium") {
-    price += 2;
+    price += 25;
   }
 
-  if (this.toppingsList.length > 3) {
-    price += 6;
+  if (this.toppingsList.length > 4) {
+    price += 40;
+  } else if (this.toppingsList.length > 3) {
+    price += 30;
   } else if (this.toppingsList.length > 2) {
-    price += 4;
+    price += 20;
+  } else if (this.toppingsList.length > 1) {
+    price += 10;
   }
 
   if (this.delivery === "delivery") {
-    price += 5;
+    price += 50;
   }
 
   return price;
 };
 
 
-$(function() {
+$(document).ready(function() {
   $("form.pizza-form").submit(function(event) {
     event.preventDefault();
 
     var inputtedSize = $("select#pizza-size").val();
-    var inputtedToppings = $("input:checked").val();
+    var inputtedToppings = [];
+      $('#checkboxes input:checked').each(function() {
+        inputtedToppings.push($(this).attr('value'));
+      });
     var inputtedDelivery = $("select#delivery-option").val();
 
     var newPizza = new Pizza(inputtedSize, inputtedToppings, inputtedDelivery);
 
-    $(".result").text(newPizza.fullDetails() + " with " + inputtedToppings +  " will be $" + newPizza.pricer() + ".00");
+    $(".result").text(newPizza.fullDetails() + inputtedToppings.join(" & ") +  " will be $" + newPizza.pricer() + ".00");
   });
 
 
