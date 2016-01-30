@@ -7,7 +7,7 @@ function Pizza (pizzaSize, toppingsList, delivery) {
 };
 
 Pizza.prototype.toppingAdder = function(topping) {
-  var toppings = ["pepperoni", "olives", "anchovies", "mushrooms", "green peppers", "onions"];
+  var toppings = ["saffron", "caviar", "truffle", "kobe", "mushrooms"];
   var toppingsList = ["nil"];
   for (var i = 1; i < toppings.length; i++) {
     if (toppings[i] = topping) {
@@ -18,7 +18,7 @@ Pizza.prototype.toppingAdder = function(topping) {
 };
 
 Pizza.prototype.fullDetails = function() { //returns full details
-  return "Your order: a " + this.pizzaSize + " pizza with ";
+  return this.pizzaSize + " pizza for " + this.delivery + " with ";
 };
 
 Pizza.prototype.pricer = function(){
@@ -60,6 +60,7 @@ $(document).ready(function() {
 
     var newPizza = new Pizza(inputtedSize, inputtedToppings, inputtedDelivery);
 
+    $("#result").show();
     $(".result").text(newPizza.fullDetails() + inputtedToppings.join(" & ") +  " will be $" + newPizza.pricer() + ".00");
   });
 

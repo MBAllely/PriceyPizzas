@@ -12,7 +12,7 @@ describe("Pizza", function() {
 
   it("add the fullDetails method to new orders", function() {
     var newOrder = new Pizza("medium", ["pepperoni"], "delivery");
-    expect(newOrder.fullDetails()).to.equal("Your order: a medium pizza ");
+    expect(newOrder.fullDetails()).to.equal("medium pizza for delivery with ");
   });
   it("determines the final price of a new pizza order", function() {
     var newOrder = new Pizza("medium", ["pepperoni", "onion", "mushrooms"], "delivery");

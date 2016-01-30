@@ -10,7 +10,7 @@
   <body>
     <div class="jumbotron">
       <div class="jumbotext">
-        <h1>Booshie's Gentrified Pizza Pies</h1>
+        <h1>Boozhie's Gentrified Pizza Pies</h1>
       </div>
     </div>
 <div class="container">
@@ -19,6 +19,9 @@
     <div class="col-xs-7"> <!--column 1-->
       <form class="pizza-form">
         <div class="form-group"><!--size-->
+          <h4>
+            <strong>What size pizza would you like?</strong>
+          </h4>
           <label for="pizza-size">Size</label>
           <select id="pizza-size">
             <option value="small">Small</option>
@@ -28,15 +31,19 @@
         </div><!--size end-->
 
         <div class="form-group" id="checkboxes"> <!--checkbox-->
-          <input type="checkbox" name="topping" value="onions" id="onions"> Onions<br>
-          <input type="checkbox" name="topping" value="pepperoni" id="pepperoni"> Pepperoni<br>
-          <input type="checkbox" name="topping" value="peppers" id=" peppers"> Green Peppers<br>
-          <input type="checkbox" name="topping" value="mushrooms" id="mushrooms"> Mushrooms<br>
-          <input type="checkbox" name="topping" value="anchovies" id="anchovies"> Anchovies<br>
+          <h4>
+            <strong>Your toppings:</strong>
+          </h4>
+          <input type="checkbox" name="topping" value="saffron" id="saffron"> Saffron<br>
+          <input type="checkbox" name="topping" value="caviar" id="caviar"> Caviar<br>
+          <input type="checkbox" name="topping" value="truffle" id=" truffle"> White Truffle<br>
+          <input type="checkbox" name="topping" value="kobe beef" id="kobe"> Kobe Beef<br>
+          <input type="checkbox" name="topping" value="matsutake mushrooms" id="mushrooms"> Matsutake Mushrooms <br>
 
         </div> <!--checkbox end-->
         <div class="form-group">
-          <label for="delivery-option">Carry out or Delivery?</label>
+          <h4>Carry out or Delivery?</h4>
+
           <select id="delivery-option">
             <option value="carry-out">Carry out</option>
             <option value="delivery">Delivery</option>
@@ -45,8 +52,8 @@
         <button type="submit" class="btn btn-primary" name="button">Submit</button>
       </form>
     </div> <!--column 1 end-->
-    <div class="col-xs-5 result"> <!--column 2-->
-
+    <div class="col-xs-5" id="result"> <!--column 2-->
+      <h3>Your order: a <span class="result"></span></h3>
     </div> <!--column 2 end-->
   </div> <!--row end-->
 </div>
